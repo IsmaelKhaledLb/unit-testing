@@ -33,9 +33,12 @@ class Calculator(Adder adder, Multiplier multiplier)
     private Adder _adder = adder
     private Multiplier _multiplier = multiplier
     
-    function ComplexCalculation(number firstNumber, number secondNumber, number thirdNumber)
+    function ComplexCalculation(number firstNumber, number secondNumber, number thirdNumber) // (firstNumber * SecondNumber) + thirdNumber
     {
         if (firstNumber + secondNumber) equals 0 then throw new Exception("This is illegal")
-        return (firstNumber * secondNumber) + thirdNumber
+        multiplierResult = _multiplier.Multiply(firstNumber, secondNumber)
+        finalResult = _adder.Add(multiplierResult, thirdNumber)
+
+        return finalResult
     }
 }
