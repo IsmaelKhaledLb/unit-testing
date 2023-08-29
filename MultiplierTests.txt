@@ -1,0 +1,37 @@
+// Testing Multiplier class
+
+class MultiplierTests()
+{
+    Multiplier serviceUnderTest = new Multiplier()
+    
+    function GivenTwoNumbers_WhenOneOfThemIsNegative_ThenTheResultIsNegative()
+    {
+        result = serviceUnderTest.Multiply(1, -1)
+        assert result is negative
+    }
+
+    function GivenTwoNumbers_WhenTheyAreBothNegative_ThenTheResultIsPositive()
+    {
+        result = serviceUnderTest.Multiply(-1, -1)
+        assert result is positive
+    }
+
+    function GivenTwoNumbers_WhenTheyAreBothPositive_ThenTheResultIsPositive()
+    {
+        result = serviceUnderTest.Multiply(1, 1)
+        assert result is positive
+    }
+
+    ... other tests that aren't relevant
+}
+
+
+// class code
+
+class Multiplier()
+{
+    function Multiply(number firstNumber, number secondNumber)
+    {
+        return firstNumber * secondNumber;
+    }
+}

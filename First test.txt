@@ -1,0 +1,33 @@
+// Testing Adder class
+
+class AdderTests()
+{
+    Adder serviceUnderTest = new Adder()
+    function FirstTest()
+    {
+        assert serviceUnderTest.Add(1,2) returns 3
+    }
+
+    function SecondTest()
+    {
+        assert serviceUnderTest.Add(0,1) returns 1
+    }
+
+    function TestAdderWorksWithNegativeNumbers()
+    {
+        assert serviceUnderTest.Add(-1, -2) returns -3
+    }
+
+    ... other tests that aren't relevant
+}
+
+
+// class code
+
+class Adder()
+{
+    function Add(number firstNumber, number secondNumber)
+    {
+        return firstNumber + secondNumber;
+    }
+}
