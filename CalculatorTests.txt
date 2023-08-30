@@ -16,8 +16,8 @@ class CalculatorTests()
         number secondNumber = 1
         number thirdNumber = 2
         resultDeferred = deferExecution of serviceUnderTest.ComplexCalculation(firstNumber, secondNumber, thirdNumber)
-        assert after resultDeferred.Run() that serviceUnderTest.RareCondition is false 
         assert resultDeferred.Run()'s result is equal to third number
+        assert after resultDeferred.Run() that serviceUnderTest.RareCondition is false 
     }
 
     ... other tests that aren't relevant
