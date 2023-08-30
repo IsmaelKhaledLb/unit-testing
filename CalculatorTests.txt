@@ -16,7 +16,7 @@ class CalculatorTests()
         number secondNumber = 1
         number thirdNumber = 2
         resultDeferred = deferExecution of serviceUnderTest.ComplexCalculation(firstNumber, secondNumber, thirdNumber)
-        assert resultDeferred.Run() does not throw Exception
+        assert after resultDeferred.Run() that serviceUnderTest.RareCondition is false 
         assert resultDeferred.Run()'s result is equal to third number
     }
 
@@ -30,10 +30,11 @@ class Calculator()
 {
     private Adder _adder = new Adder()
     private Multiplier _multiplier = new Multiplier()
+    public boolean RareCondition = false
     
     function ComplexCalculation(number firstNumber, number secondNumber, number thirdNumber) // (firstNumber * SecondNumber) + thirdNumber
     {
-        if (firstNumber + secondNumber) equals 0 then throw new Exception("This is illegal")
+        if (firstNumber + secondNumber) equals 0 then set RareCondition to true
         multiplierResult = _multiplier.Multiply(firstNumber, secondNumber)
         finalResult = _adder.Add(multiplierResult, thirdNumber)
 
