@@ -2,9 +2,7 @@
 
 class CalculatorTests()
 {
-    Adder adder = new Adder()
-    Multiplier multiplier = new Multiplier()
-    Calculator serviceUnderTest = new Calculator(adder, multiplier)
+    Calculator serviceUnderTest = new Calculator()
 
     function GivenThreeNumbers_WhenNoneOfThemEqualsZero_ThenTheResultIsNotZero()
     {
@@ -28,10 +26,10 @@ class CalculatorTests()
 
 
 // class code
-class Calculator(Adder adder, Multiplier multiplier)
+class Calculator()
 {
-    private Adder _adder = adder
-    private Multiplier _multiplier = multiplier
+    private Adder _adder = new Adder()
+    private Multiplier _multiplier = new Multiplier()
     
     function ComplexCalculation(number firstNumber, number secondNumber, number thirdNumber) // (firstNumber * SecondNumber) + thirdNumber
     {
